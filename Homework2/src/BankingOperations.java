@@ -2,16 +2,16 @@ import java.util.Scanner;
 
 public class BankingOperations {
     public static void main(String[] args) {
-        double deposit;
+        double deposit = 0, startDeposit = 0;
         int depositPercentYear;
-        double depositPercentMonth;
+        double depositPercentMonth, accruedPercent;
         int year;
-        int month;
 
         Scanner scanner;
+
         System.out.println("Введите сумму вклада:");
         scanner = new Scanner(System.in);
-        deposit = scanner.nextDouble();
+        startDeposit = scanner.nextDouble();
         System.out.println("Введите процент депозита:");
         scanner = new Scanner(System.in);
         depositPercentYear = scanner.nextInt();
@@ -19,12 +19,16 @@ public class BankingOperations {
         scanner = new Scanner(System.in);
         year = scanner.nextInt();
 
-        month = year * 12;
         depositPercentMonth = (double)depositPercentYear / 12;
+        deposit = startDeposit;
 
-        for(int i = 0; i < month; i++){                         //Подсчёт итоговой суммы
-            deposit += deposit * depositPercentMonth / 100;
+        for(int i = 0; i < year; i++) {
+            for (int j = 0; j < 12; j++) {                                  //Подсчёт итоговой суммы
+                deposit += deposit * depositPercentMonth / 100;
+            }
+            accruedPercent = (((deposit / startDeposit) * 100) - 100);              //Подсчёт насчитанных процентов
+            System.out.println("Сумма за " + (i + 1) + "-й год = " + deposit);
+            System.out.println("Начислено процентов от начальной суммы: " + accruedPercent);
         }
-        System.out.println("Итоговая сумма : " + deposit);
     }
 }
