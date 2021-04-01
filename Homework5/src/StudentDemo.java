@@ -30,14 +30,15 @@ public class StudentDemo {
         //Full group output
         System.out.println("Full group:");
         for (Student s : group){
-            System.out.println(s.toString());
+            if(s != null)
+                System.out.println(s.toString());
         }
         System.out.println();
 
         //Adjusted Faculty students
         System.out.println("Engineering faculty students:");
         for (Student s : group){
-            if(s.getFaculty() == faculty) {
+            if((s != null)&&(s.getFaculty() == faculty)) {
                 System.out.println(s.toString());
             }
         }
@@ -46,7 +47,7 @@ public class StudentDemo {
         //Adjusted Faculty & Course students
         System.out.println("Engineering faculty and AC-171 group students:");
         for (Student s : group){
-            if((s.getFaculty() == faculty)&&(s.getGroup()==groupName)) {
+            if((s != null)&&(s.getFaculty() == faculty)&&(s.getGroup()==groupName)) {
                 System.out.println(s.toString());
             }
         }
@@ -55,7 +56,7 @@ public class StudentDemo {
         //Adjusted Birth Year students
         System.out.println("Born in 2000 students:");
         for (Student s : group){
-            if((s.getBirthYear() == birthYear)) {
+            if((s != null)&&(s.getBirthYear() == birthYear)) {
                 System.out.println(s.toString());
             }
         }
@@ -64,7 +65,7 @@ public class StudentDemo {
         //Adjusted Group students
         System.out.println("AC-171 group students:");
         for (Student s : group){
-            if((s.getGroup() == groupName)) {
+            if((s != null)&&(s.getGroup() == groupName)) {
                 System.out.println(s.toString());
             }
         }
