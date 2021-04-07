@@ -1,6 +1,6 @@
 public class PhoneDemo {
     public static void main(String[] args) {
-        Phone phone = new Phone();
+        PhoneFilter phoneFilter = new PhoneFilter();
         Phone[] phoneMembers = new Phone[17];
 
         Phone member1 = new Phone(16, 432138, 3123139, 4220, 3300, 89.3, 65, 2122, "kkkk", "Ivan", "Ivanych");
@@ -28,19 +28,19 @@ public class PhoneDemo {
         phoneMembers[16] = member17;
 
         System.out.println("Абоненты, у которых кол-во минут по вутригородней связи превышает 50 :");
-        Phone.exceedsTime(phoneMembers, 50);
+        phoneFilter.exceedsTime(phoneMembers, 50);
         System.out.println();
 
         System.out.println("Абоненты, сортированные по фамилии :");
-        Phone.alphabetList(phoneMembers);
+        phoneFilter.alphabetList(phoneMembers);
         System.out.println();
 
         System.out.println("Абоненты, которые пользовались межгородом :");
-        Phone.usingOuterConnection(phoneMembers);
+        phoneFilter.usingOuterConnection(phoneMembers);
         System.out.println();
 
         System.out.println("Топ 10 абонентов-пользователей интернета");
-        Phone.theBiggestTrafficUsers(phoneMembers);
+        phoneFilter.theBiggestTrafficUsers(phoneMembers);
         System.out.println();
 
     }

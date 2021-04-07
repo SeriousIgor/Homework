@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Phone implements choosingData {
+public class Phone {
     int id, phoneNumber, cardNumber, debit, credit;
     double intercityTime, outerTime, internetTraffic;
     String surname, name, patronymic;
@@ -37,91 +37,6 @@ public class Phone implements choosingData {
         this.surname = surname;
         this.name = name;
         this.patronymic = patronymic;
-    }
-
-    //Interface methods
-
-    static public void exceedsTime(Phone[] phoneMembers, int n){
-            for(Phone p : phoneMembers) {
-                try {
-                    if (p.intercityTime > n) {
-                        System.out.println(p.toString());
-                    }
-                }
-                catch (NullPointerException e){}
-                finally {
-                    continue;
-                }
-            }
-    }
-
-    static public void alphabetList(Phone[] phoneMembers){
-        String[] surnames = new String[phoneMembers.length];
-        for(int i = 0; i < phoneMembers.length; i++){
-            try {
-                surnames[i] = phoneMembers[i].surname;
-            }
-            catch (NullPointerException e) {}
-            finally {
-                continue;
-            }
-        }
-        Arrays.sort(surnames);
-        for(int i = 0; i < phoneMembers.length; i++){
-            try {
-                for(Phone p : phoneMembers){
-                    if (p.surname.equals(surnames[i])){
-                        System.out.println(p.toString());
-                    }
-                }
-            }
-            catch (NullPointerException e) {}
-            finally {
-                continue;
-            }
-        }
-    }
-
-    static public void usingOuterConnection(Phone[] phoneMembers){
-        for(Phone p : phoneMembers) {
-            try {
-                if (p.outerTime != 0) {
-                    System.out.println(p.toString());
-                }
-            }
-            catch (NullPointerException e){}
-            finally {
-                continue;
-            }
-        }
-    }
-
-    static public void theBiggestTrafficUsers(Phone[] phoneMembers){
-        double[] internet = new double[phoneMembers.length];
-        for(int i = 0; i < phoneMembers.length; i++){
-            try {
-                internet[i] = phoneMembers[i].internetTraffic;
-            }
-            catch (NullPointerException e) {}
-            finally {
-                continue;
-            }
-        }
-        Arrays.sort(internet);
-        for(int i = phoneMembers.length-1; i > phoneMembers.length - 11; i--)
-        {
-            try {
-                for(Phone p : phoneMembers){
-                    if (p.internetTraffic == internet[i]){
-                        System.out.println(p.toString());
-                    }
-                }
-            }
-            catch (NullPointerException e) {}
-            finally {
-                continue;
-            }
-        }
     }
 
     //Override
