@@ -17,6 +17,14 @@ public class StringCollectionsRun {
         stringCollections.add(3,"Ddddd");
         stringCollections.add(0,"Ccccc");
         stringCollections.add(7,"Ddddd");
+        stringCollections.add(11,"Ddddd");
+        stringCollections.add(2,"Ddddd");
+        stringCollections.add(1,"Ddddd");
+        stringCollections.add(7,"Ddddd");
+        stringCollections.add(7,"Ddddd");
+        stringCollections.add(5,"Ddddd");
+        stringCollections.add(5,"Ddddd");
+        stringCollections.add(3,"Ddddd");
         stringCollections.print();
 
         System.out.println();
@@ -46,7 +54,7 @@ public class StringCollectionsRun {
         stringCollections2.add("Value");
 
         System.out.println("Removing a nonexistent element with index 2");
-        if(stringCollections2.remove(2)){
+        if(stringCollections2.remove(22)){
             System.out.println("That part will not be reflected");
         }
         else{
@@ -65,7 +73,7 @@ public class StringCollectionsRun {
 
         System.out.println("___________");
 
-        if(stringCollections2.add(5, "value")){
+        if(stringCollections2.add(25, "value")){
             System.out.println("That part will not be reflected");
         }
         else{

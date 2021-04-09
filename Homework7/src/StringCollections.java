@@ -4,7 +4,7 @@ public class StringCollections implements IStringCollections {
     private String[] sCol;
 
     public StringCollections(){
-            this.sCol = new String[0];
+            this.sCol = new String[10];
     }
 
     public void generateNewArray(boolean option){
@@ -103,7 +103,7 @@ public class StringCollections implements IStringCollections {
     @Override
     public String get(int index){
         String value = "Empty";
-        if (index < sCol.length){
+        if (count < sCol.length){
             value = sCol[index];
         }
         return value;
