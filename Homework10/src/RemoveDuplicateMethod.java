@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -23,12 +24,9 @@ public class RemoveDuplicateMethod {
     }
 
     public static List<Object> removeDuplicate(List<Object> list){
-        List<Object> newL = new ArrayList<Object>();
-        for(Object el : list){
-            if (!newL.contains(el)){
-                newL.add(el);
-            }
-        }
+        List<Object> newL = new ArrayList<>(new HashSet<>(list));
+        //Создаётся новый список, параметром которого есть HashSet из старого списка,
+        //тем самым значения, что повторяются, не будут заноситься в HashSet
         return newL;
     }
 }
