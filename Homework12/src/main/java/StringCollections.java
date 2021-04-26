@@ -2,15 +2,15 @@ import java.util.Collection;
 
 public class StringCollections implements IStringCollections {
 
-    private int count; //Подсчёт кол-ва символов
-    private Object[] sCol;
+    int count; //Подсчёт кол-ва символов
+    Object[] sCol;
 
     public StringCollections(){
             this.sCol = new String[10];
             count = 10;
     }
 
-    public void generateNewArray(boolean option){
+    private void generateNewArray(boolean option){
         int length = sCol.length;
         Object[] temp = sCol;
         if(option) {
