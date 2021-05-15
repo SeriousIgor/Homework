@@ -8,7 +8,8 @@ public class PseudographicsRun {
             System.out.println("Write sequence of numbers: ");
             sequence = new Scanner(System.in).nextLine();
             try {
-                Integer.parseInt(sequence);
+                for(char c : sequence.toCharArray())
+                Integer.parseInt(String.valueOf(c));
             } catch (NumberFormatException ignored){
                 System.out.println("Number is invalid");
                 continue;
