@@ -5,7 +5,6 @@ public class Log {
 
     User user;
     String gameInfo = "";
-    List<String> games = new ArrayList<String>();
 
 
     public Log(){
@@ -15,19 +14,12 @@ public class Log {
         this.user = user;
     }
 
-    public void addGameResult(String gameResult){
-        games.add(gameResult);
-    }
-
-    public void generateInfo(){
-        int counter = 0;
-        for(String s : games){
-            gameInfo += " Game #" + counter + ": " + s + ". ";
-        }
+    public void addGameResult(String gameResult, int userMove, int compMove){
+        gameInfo += "Game result: " + gameResult + " | Player move: " + userMove + " Computer move: " + compMove + ".\n";
     }
 
     @Override
     public String toString() {
-        return "Log{ user = " + user.getName() + " | Games played=" + user.getGamesPlayed() + " : " + gameInfo +'}';
+        return "Log{ user = " + user.getName() + " | Games played = " + user.getGamesPlayed() + ":\n" + gameInfo +'}';
     }
 }

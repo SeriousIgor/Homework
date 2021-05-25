@@ -64,25 +64,27 @@ public class Game {
 
     void makeMove(int userOption){
         int computerOption = new Random().nextInt(3);
+        String result = "";
         char option = winCombination[userOption][computerOption];
         switch (option) {
             case 'w' -> {
                 user.setWinCount(user.getWinCount() + 1);
-                System.out.println("You win");
-                log.addGameResult("Win");
+                result = "Win";
+                System.out.println(result);
             }
             case 'l' -> {
                 user.setLosesCount(user.getLosesCount() + 1);
-                System.out.println("You lose");
-                log.addGameResult("Lose");
+                result = "Lose";
+                System.out.println(result);
 
             }
             case 'd' -> {
                 user.setDrawCount(user.getDrawCount() + 1);
-                System.out.println("Game draw");
-                log.addGameResult("Draw");
+                result = "Draw";
+                System.out.println(result);
             }
         }
+        log.addGameResult(result, userOption, computerOption);
         switch (computerOption) {
             case 0 -> System.out.println("Computer option is Rock");
             case 1 -> System.out.println("Computer option is Scissors");
@@ -141,7 +143,6 @@ public class Game {
     }
 
     void generateLog() throws IOException {
-        log.generateInfo();
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmm");
         Date date = new Date(System.currentTimeMillis());
         String logName = "log_" + user.getName() + "_" + df.format(date) + "_0" + ".txt";
