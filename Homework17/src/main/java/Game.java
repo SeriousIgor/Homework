@@ -65,6 +65,8 @@ public class Game {
     void makeMove(int userOption){
         int computerOption = new Random().nextInt(3);
         String result = "";
+        String cOption = "";
+        String uOption = "";
         char option = winCombination[userOption][computerOption];
         switch (option) {
             case 'w' -> {
@@ -84,13 +86,19 @@ public class Game {
                 System.out.println(result);
             }
         }
-        log.addGameResult(result, userOption, computerOption);
         switch (computerOption) {
-            case 0 -> System.out.println("Computer option is Rock");
-            case 1 -> System.out.println("Computer option is Scissors");
-            case 2 -> System.out.println("Computer option is Paper");
+            case 0 -> cOption = "Rock";
+            case 1 -> cOption = "Scissors";
+            case 2 -> cOption = "Paper";
         }
-        System.out.println();
+        switch (userOption) {
+            case 0 -> uOption = "Rock";
+            case 1 -> uOption = "Scissors";
+            case 2 -> uOption = "Paper";
+        }
+        log.addGameResult(result, uOption, cOption);
+        System.out.println("Your option is " + uOption);
+        System.out.println("Computer option is " + cOption + "\n");
     }
 
     int getUserOption(){

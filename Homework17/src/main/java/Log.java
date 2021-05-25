@@ -14,12 +14,12 @@ public class Log {
         this.user = user;
     }
 
-    public void addGameResult(String gameResult, int userMove, int compMove){
-        gameInfo += "Game result: " + gameResult + " | Player move: " + userMove + " Computer move: " + compMove + ".\n";
+    public void addGameResult(String gameResult, String userMove, String compMove){
+        gameInfo += "Game result: " + gameResult + " | Player move: " + userMove + ". Computer move: " + compMove + ".\n";
     }
 
     @Override
     public String toString() {
-        return "Log{ user = " + user.getName() + " | Games played = " + user.getGamesPlayed() + ":\n" + gameInfo +'}';
+        return "Log { user = " + user.getName() + " | Games played = " + user.getGamesPlayed() + ":\n" + gameInfo +'}';
     }
 }
