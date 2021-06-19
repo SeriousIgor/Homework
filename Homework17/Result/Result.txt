@@ -1,0 +1,6 @@
+User : a
+Games played : 1
+Wins : 0
+Loses : 0
+Draws : 1
+_______________________________
