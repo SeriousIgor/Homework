@@ -12,6 +12,7 @@ public class Game {
     private static final Logger loggerInfo = LoggerFactory.getLogger("logger.info");
     private static final Logger loggerResult = LoggerFactory.getLogger("logger.gameResult");
     private static final Logger loggerError = LoggerFactory.getLogger("logger.error");
+    private static final Logger loggerOut = LoggerFactory.getLogger("logger.stdout");
 
     private final char[][] winCombination = { {'d', 'w', 'l'},
                                         {'l', 'd', 'w'},
@@ -19,23 +20,20 @@ public class Game {
     int amount;
 
     public void printTutorial(){
-        System.out.println("Welcome to the game \"Rock, Scissors, Paper\"");
-        System.out.println("Game rules:");
-        System.out.print("Rock: 0 | ");
-        System.out.print("Scissors: 1 | ");
-        System.out.print("Paper: 2 | ");
-        System.out.println("Exit from the game : 3");
-        System.out.println("For starting new game, first you need to enter your name and amount of games");
+        loggerOut.info("Welcome to the game \"Rock, Scissors, Paper\"");
+        loggerOut.info("Game rules: Rock: 0 | Scissors: 1 | Paper: 2 | ");
+        loggerOut.info("Exit from the game : 3");
+        loggerOut.info("For starting new game, first you need to enter your name and amount of games");
     }
 
     public void getInfo(Scanner scanner) {
-        System.out.println("Enter your name: ");
+        loggerOut.info("Enter your name: ");
         user = new User(scanner.next());
         loggerInfo.info(user.getName() + " started the game.");
 
         while (true) {
             try {
-                System.out.println("Enter amount of games: ");
+                loggerOut.info("Enter amount of games: ");
                 amount = Integer.parseInt(scanner.next());
                 break;
             }
@@ -61,7 +59,7 @@ public class Game {
                 user.setGamesPlayed(user.getGamesPlayed()+1);
             }
             else {
-                System.out.println("Wrong number");
+                loggerOut.info("Wrong number");
                 loggerError.error(user.getName() + " entered wrong number.");
             }
         }
@@ -80,18 +78,18 @@ public class Game {
             case 'w' -> {
                 user.setWinCount(user.getWinCount() + 1);
                 result = "Win";
-                System.out.println(result);
+                loggerOut.info(result);
             }
             case 'l' -> {
                 user.setLosesCount(user.getLosesCount() + 1);
                 result = "Lose";
-                System.out.println(result);
+                loggerOut.info(result);
 
             }
             case 'd' -> {
                 user.setDrawCount(user.getDrawCount() + 1);
                 result = "Draw";
-                System.out.println(result);
+                loggerOut.info(result);
             }
         }
         switch (computerOption) {
@@ -105,15 +103,15 @@ public class Game {
             case 2 -> uOption = "Paper";
         }
         loggerInfo.info("Current game result: " + result + ". User option is " + uOption + ". Computer option is " + cOption);
-        System.out.println("Your option is " + uOption);
-        System.out.println("Computer option is " + cOption + "\n");
+        loggerOut.info("Your option is " + uOption);
+        loggerOut.info("Computer option is " + cOption + "\n");
     }
 
     int getUserOption(){
         int userOption;
         while (true) {
             try {
-                System.out.println("Enter your option: ");
+                loggerOut.info("Enter your option: ");
                 userOption = new Scanner(System.in).nextInt();
                 break;
             }
@@ -125,14 +123,14 @@ public class Game {
         return userOption;
     }
 
-    void getStatistic(){
-        System.out.println();
-        System.out.println("User : " + user.getName());
-        System.out.println("Games played : " + user.getGamesPlayed());
-        System.out.println("Wins : " + user.getWinCount());
-        System.out.println("Loses : " + user.getLosesCount());
-        System.out.println("Draws : " + user.getDrawCount());
-        System.out.println();
+    private void getStatistic(){
+        loggerOut.info("\n");
+        loggerOut.info("User : " + user.getName());
+        loggerOut.info("Games played : " + user.getGamesPlayed());
+        loggerOut.info("Wins : " + user.getWinCount());
+        loggerOut.info("Loses : " + user.getLosesCount());
+        loggerOut.info("Draws : " + user.getDrawCount());
+        loggerOut.info("\n");
     }
 
     void writeResult() {
