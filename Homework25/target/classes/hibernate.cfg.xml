@@ -6,7 +6,8 @@
 <hibernate-configuration>
     <session-factory>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.c3p0.min_size">5</property>
 
         <!-- Assume mydb is the database name -->
         <property name="connection.url">jdbc:mysql://localhost:3306/hillellearn?serverTimezone=UTC</property>
@@ -22,7 +23,7 @@
         <property name="connection.pool_size">1</property>
         <property name="current_session_context_class">thread</property>
 
-        <mapping class="com.projects.example.hibernate.base.entity.Student" />
+        <mapping class="Student" />
 
     </session-factory>
 </hibernate-configuration>

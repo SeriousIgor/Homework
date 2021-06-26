@@ -34,14 +34,17 @@ public class DbRun {
 
             switch (option){
                 case 1:
-                    System.out.print("Temporary unable"); break;
-                case 2: dbo.addRecord(); break;
-                case 3: dbo.selectAllRecords(); break;
+                    System.out.print("Enter id: "); dbo.deleteRecord(scanner.nextInt()); break;
+                case 2:
+                    dbo.addRecord(); break;
+                case 3:
+                    dbo.selectAllRecords(); break;
                 case 4:
                     System.out.print("Enter id: "); dbo.getStudent(scanner.nextInt()); break;
                 case 5:
                     System.out.print("Enter name: "); dbo.getStudent(scanner.next()); break;
-                case 6: exit = true;
+                case 6:
+                    exit = true;
             }
         }
     }

@@ -1,7 +1,12 @@
+import lombok.Data;
+import lombok.experimental.Accessors;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "students")
+@Accessors(chain = true)
 
 public class Student {
     @Id
@@ -21,7 +26,8 @@ public class Student {
 
     }
 
-    public Student(String fio, int id_group, String admission_year) {
+    public Student(int id_student, String fio, int id_group, String admission_year) {
+        this.id_student = id_student;
         this.fio = fio;
         this.id_group = id_group;
         this.admission_year = admission_year;
@@ -69,8 +75,8 @@ public class Student {
 
     @Override
     public String toString() {
-        return  "FIO=" + fio +
-                ", ID group=" + id_group +
-                ", Admission year=" + admission_year;
+        return  "FIO = " + fio +
+                ", ID group = " + id_group +
+                ", Admission year = " + admission_year;
     }
 }

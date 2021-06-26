@@ -1,8 +1,7 @@
-import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
-
-import java.sql.*;
+import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;
+import org.hibernate.query.Query;
 import java.util.List;
 import java.util.Scanner;
 
@@ -65,16 +64,26 @@ public class DbOperations implements iOperations {
         System.out.print("Year of admission: ");
         admYear = scanner.next();
 
-        Student student = new Student(fio, id_group, admYear);
+        Student student = new Student();
+        student.setId_student(id);
+        student.setFio(fio);
+        student.setId_group(id_group);
+        student.setAdmission_year(admYear);
 
-        session.save(student);
-        session.getTransaction().commit();
+        try {
+            session.save(student);
+            session.getTransaction().commit();
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
 
     }
 
     @Override
     public void selectAllRecords() {
-        Query q = session.createQuery("From students");
+        Query q = session.createQuery("From Student s where s.is_deleted =:value");
+        q.setParameter("value", 0);
         List<Student> studentList = q.list();
         System.out.println("Amount of students :" + studentList.size());
         for(Student s : studentList){
