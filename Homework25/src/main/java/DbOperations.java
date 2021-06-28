@@ -2,6 +2,8 @@ import org.hibernate.Session;
 import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
 import org.hibernate.query.Query;
+
+import javax.persistence.PersistenceException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -74,7 +76,7 @@ public class DbOperations implements iOperations {
             session.save(student);
             session.getTransaction().commit();
         }
-        catch (Exception ex){
+        catch (PersistenceException ex){
             ex.printStackTrace();
         }
 
