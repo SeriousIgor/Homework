@@ -1,0 +1,17 @@
+2021-07-01 22:49:04,684 [INFO ] [main          ] - Igor started the game.
+2021-07-01 22:49:17,149 [INFO ] [main          ] - Igor: total games = 2. Games played: 0 | Games left: 2
+2021-07-01 22:49:19,470 [INFO ] [main          ] - Igor: total games = 2. Games played: 0 | Games left: 2
+2021-07-01 22:50:05,042 [INFO ] [main          ] - i started the game.
+2021-07-01 22:50:05,707 [INFO ] [main          ] - i: total games = 1. Games played: 0 | Games left: 1
+2021-07-01 22:50:06,668 [INFO ] [main          ] - i: total games = 1. Games played: 0 | Games left: 1
+2021-07-01 22:51:21,051 [INFO ] [main          ] - i: total games = 1. Games played: 0 | Games left: 1
+2021-07-01 23:14:42,129 [INFO ] [main          ] - Igor started the game.
+2021-07-01 23:14:44,770 [INFO ] [main          ] - Igor: total games = 3. Games played: 0 | Games left: 3
+2021-07-01 23:14:47,334 [INFO ] [main          ] - Current game result: Win. User option is Scissors. Computer option is Paper
+2021-07-01 23:14:47,334 [INFO ] [main          ] - Igor: total games = 3. Games played: 1 | Games left: 2
+2021-07-01 23:14:58,415 [INFO ] [main          ] - Igor: total games = 3. Games played: 1 | Games left: 2
+2021-07-01 23:14:59,540 [INFO ] [main          ] - Igor has finished game.
+2021-07-01 23:18:51,872 [INFO ] [main          ] - Ш started the game.
+2021-07-01 23:18:55,232 [INFO ] [main          ] - Ш: total games = 1. Games played: 0 | Games left: 1
+2021-07-01 23:18:56,623 [INFO ] [main          ] - Current game result: Win. User option is Íîæíèö³. Computer option is Ïàï³ð
+2021-07-01 23:18:56,623 [INFO ] [main          ] - Ш has finished game.
